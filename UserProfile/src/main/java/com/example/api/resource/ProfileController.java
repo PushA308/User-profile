@@ -35,6 +35,17 @@ public class ProfileController {
 		return pRepository.findAll();
 	}
 	
+	/* This code is added
+	   in newfeature branch
+	*/
+	//---------------------------------
+	@RequestMapping(value="/{id}",method=RequestMethod.PUT)
+	public void modifyProfileById(@PathVariable("id") objectId id, @validated @RequestBody Profile profile){
+		profile.set-id(id);
+		pRepository.save(profile);
+	}
+	//----------------------------------
+
 	@RequestMapping(value="/{id}",method=RequestMethod.DELETE)
 	public void deleteProfile(@PathVariable ObjectId id) {
 		pRepository.delete(pRepository.findBy_id(id));
